@@ -126,7 +126,15 @@ pre_configure() {
 }
 
 post_extract() {
-	default_post_extract
+	vendormod default_pre_build
+
+	if [ -d "old-patches" ]; then
+		for p in old-patches/*.patch; do
+			[ -e "$p" ] || continue
+			msg_normal "Applying custom patch: $(basename $p)\n"
+			patch --verbose -Np1 -i "$p"
+		done
+	fi
 }
 
 post_install() {
