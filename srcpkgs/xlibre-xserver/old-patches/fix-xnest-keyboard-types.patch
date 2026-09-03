@@ -1,0 +1,16 @@
+--- a/hw/xnest/Keyboard.c
++++ b/hw/xnest/Keyboard.c
+@@ -116,7 +116,15 @@ xnestKeyboardProc(DeviceIntPtr pDev, int onoff)
+         .minKeyCode = keymap_reply->minKeyCode,
+         .maxKeyCode = keymap_reply->maxKeyCode,
+         .mapWidth = keymap_reply->keysymsPerKeycode,
+-        .map = xcb_get_keyboard_mapping_keysyms(keymap_reply),
++        .map = NULL
+     };
++
++    /* Явное приведение типов из-за разницы между xcb_keysym_t (uint32_t) 
++       и KeySym (unsigned long). Безопаснее выделить память и скопировать */
++    keySyms.map = calloc(keySyms.maxKeyCode - keySyms.minKeyCode + 1, 
++                         keySyms.mapWidth * sizeof(KeySym));
++    memcpy(keySyms.map, xcb_get_keyboard_mapping_keysyms(keymap_reply), 
++           (keySyms.maxKeyCode - keySyms.minKeyCode + 1) * keySyms.mapWidth * sizeof(KeySym));
