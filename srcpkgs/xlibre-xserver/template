@@ -125,6 +125,10 @@ pre_configure() {
 	esac
 }
 
+post_extract() {
+	default_post_extract
+}
+
 post_install() {
 	vinstall ${FILESDIR}/Xwrapper.config 644 etc/X11
 	vlicense COPYING
