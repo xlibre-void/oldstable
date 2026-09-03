@@ -1,0 +1,34 @@
+--- a/hw/xnest/Keyboard.c
++++ b/hw/xnest/Keyboard.c
+@@ -114,10 +114,18 @@ xnestKeyboardProc(DeviceIntPtr pDev, int onoff)
+         const int num_keycode = max_keycode - min_keycode + 1;
+ 
+         xcb_get_keyboard_mapping_reply_t * keymap_reply = xnest_get_keyboard_mapping(
+             xnestUpstreamInfo.conn,
+             min_keycode,
+             num_keycode);
+ 
+         if (!keymap_reply) {
+             ErrorF("Couldn't get keyboard mappings: no reply");
+             goto XkbError;
+         }
+ 
+-        KeySymsRec keySyms = {
+-            .minKeyCode = min_keycode,
+-            .maxKeyCode = max_keycode,
+-            .mapWidth = keymap_reply->keysyms_per_keycode,
+-            .map = xcb_get_keyboard_mapping_keysyms(keymap_reply),
+-        };
++        KeySymsRec keySyms = {
++            .minKeyCode = min_keycode,
++            .maxKeyCode = max_keycode,
++            .mapWidth = keymap_reply->keysyms_per_keycode,
++            .map = NULL
++        };
++
++        size_t syms_count = (keySyms.maxKeyCode - keySyms.minKeyCode + 1) * keySyms.mapWidth;
++        keySyms.map = calloc(syms_count, sizeof(KeySym));
++        const xcb_keysym_t *src_syms = xcb_get_keyboard_mapping_keysyms(keymap_reply);
++        for (size_t i = 0; i < syms_count; ++i) {
++            keySyms.map[i] = (KeySym)src_syms[i];
++        }
