@@ -9,7 +9,6 @@ configure_args="
 	-Dxorg=true
 	-Dxnest=true
 	-Dxephyr=true
-	-Dxfbdev=true
 	-Dxvfb=true
 	-Dhal=false
 	-Dudev=true
