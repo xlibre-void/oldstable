@@ -125,9 +125,9 @@ pre_configure() {
 	esac
 }
 
-#post_patch() {
-#	sed -i 's|xcb_get_keyboard_mapping_keysyms(keymap_reply)|((KeySym *)xcb_get_keyboard_mapping_keysyms(keymap_reply))|' ${wrksrc}/hw/xnest/Keyboard.c
-#}
+# post_patch() {
+# 	sed -i 's|xcb_get_keyboard_mapping_keysyms(keymap_reply)|((KeySym *)xcb_get_keyboard_mapping_keysyms(keymap_reply))|' ${wrksrc}/hw/xnest/Keyboard.c
+# }
 
 post_install() {
 	vinstall ${FILESDIR}/Xwrapper.config 644 etc/X11
