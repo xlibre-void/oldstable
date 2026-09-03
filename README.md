@@ -9,19 +9,19 @@
 
 [![Security Audit](https://img.shields.io/github/actions/workflow/status/Letdown2491/waypoint-gtk/security.yml?label=Security%20Audit&logo=github&colorA=363a4f&colorB)](#)
 [![Platform](https://img.shields.io/badge/platform-Void%20Linux-478061?logo=linux&colorA=363a4f)](#)
-[![Xlibre](https://img.shields.io/badge/xlibre-void/xlibre?style=badge&label=Xlibre-Void&logo=X&colorA=363a4f&colorB=df8e1d)](#)
+[![Xlibre](https://img.shields.io/badge/xlibre-void/oldstable?style=badge&label=Xlibre-Void&logo=X&colorA=363a4f&colorB=df8e1d)](#)
 [![Version](https://img.shields.io/badge/version-25.0.0.25-blue)](#)
-[![Repo size](https://img.shields.io/github/repo-size/xlibre-void/xlibre?style=badge&logo=protondrive&logoColor=fff&colorA=363a4f&colorB=blue)](#)
+[![Repo size](https://img.shields.io/github/repo-size/xlibre-void/oldstable?style=badge&logo=protondrive&logoColor=fff&colorA=363a4f&colorB=blue)](#)
 
-[![Auto Assign](https://github.com/xlibre-void/xlibre/actions/workflows/build.yml/badge.svg)](https://github.com/xlibre-void/xlibre/actions/workflows/build.yml)
-[![Proof HTML](https://github.com/xlibre-void/xlibre/actions/workflows/update-template.yml/badge.svg)](https://github.com/xlibre-void/xlibre/actions/workflows/update-template.yml)
-[![Build](https://img.shields.io/github/actions/workflow/status/xlibre-void/xlibre/build.yml?style=badge&label=BUILD&logo=githubactions&logoColor=white&colorA=363a4f&colorB)](https://github.com/xlibre-void/xlibre/actions)
+[![Auto Assign](https://github.com/xlibre-void/oldstable/actions/workflows/build.yml/badge.svg)](https://github.com/xlibre-void/oldstable/actions/workflows/build.yml)
+[![Proof HTML](https://github.com/xlibre-void/oldstable/actions/workflows/update-template.yml/badge.svg)](https://github.com/xlibre-void/oldstable/actions/workflows/update-template.yml)
+[![Build](https://img.shields.io/github/actions/workflow/status/xlibre-void/oldstable/build.yml?style=badge&label=BUILD&logo=githubactions&logoColor=white&colorA=363a4f&colorB)](https://github.com/xlibre-void/oldstable/actions)
 <!--
 [![Build](https://github.com/xlibre-void/xlibre/actions/workflows/build.yml/badge.svg?style=badge&logoColor=white&colorA=363a4f&colorB)](https://github.com/xlibre-void/xlibre/actions/workflows/build.yml)
 [![Build](https://img.shields.io/github/actions/workflow/status/xlibre-void/xlibre/build.yml?style=badge&label=BUILD&logo=githubactions&logoColor=white&colorA=363a4f&colorB)](https://github.com/xlibre-void/xlibre/actions)
 [![Updates](https://img.shields.io/github/actions/workflow/status/xlibre-void/xlibre/update.yml?style=badge&label=AUTO-UPDATE&logo=github&logoColor=white&colorA=363a4f&colorB=)](https://github.com/xlibre-void/xlibre/actions/workflows/update.yml) -->
 
-[![GitHub license](https://img.shields.io/github/license/xlibre-void/xlibre?style=badge&label=License&colorA=363a4f&colorB=purple&logo=gitbook)](https://github.com/xlibre-void/xlibre/blob/main/LICENSE)
+<!--[![GitHub license](https://img.shields.io/github/license/xlibre-void/xlibre?style=badge&label=License&colorA=363a4f&colorB=purple&logo=gitbook)](https://github.com/xlibre-void/xlibre/blob/main/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/xlibre-void/xlibre?style=badge&colorA=363a4f&colorB=purple&logo=github&label=Contributors)](https://github.com/xlibre-void/xlibre/graphs/contributors)
 [![GitHub release (with filter)](https://img.shields.io/github/v/release/xlibre-void/xlibre?style=badge&logo=github&label=Release&colorA=363a4f&colorB=purple)](https://github.com/xlibre-void/xlibre/releases)
 [![GitHub issues](https://img.shields.io/github/issues-raw/xlibre-void/xlibre?style=badge&label=Open%20Issues&logo=github&colorA=363a4f&colorB=purple)](https://github.com/xlibre-void/xlibre/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen)
@@ -32,7 +32,7 @@
 [![GitHub watchers](https://img.shields.io/github/watchers/xlibre-void/xlibre?style=badge&logo=github&colorA=363a4f&colorB=purple)](https://github.com/xlibre-void/xlibre/watchers)
 [![GitHub forks](https://img.shields.io/github/forks/xlibre-void/xlibre?style=badge&logo=github&colorA=363a4f&colorB=purple)](#)
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/xlibre-void/xlibre/main?style=badge&label=Last%20Commit&logo=git&logoColor=fff&colorA=363a4f&colorB=purple)](#)
-[![Discussions](https://img.shields.io/github/discussions/xlibre-void/xlibre?style=badge&label=Discussions&logo=github&logoColor=fff&colorA=363a4f&colorB=purple)](https://github.com/orgs/xlibre-void/discussions)
+[![Discussions](https://img.shields.io/github/discussions/xlibre-void/xlibre?style=badge&label=Discussions&logo=github&logoColor=fff&colorA=363a4f&colorB=purple)](https://github.com/orgs/xlibre-void/discussions) -->
 
 <!-- style=for-the-badge / style string
 Possible values: [flat, flat-square, plastic, badge, for-the-badge, social] -->
@@ -63,7 +63,7 @@ sudo mkdir -p /etc/xbps.d
 ```
 
 ```
-printf "repository=https://github.com/xlibre-void/xlibre/releases/latest/download/" | sudo tee /etc/xbps.d/99-repository-xlibre.conf
+printf "repository=https://github.com/xlibre-void/oldstable/releases/latest/download/" | sudo tee /etc/xbps.d/99-repository-xlibre-oldstable.conf
 ```
 
 > [!IMPORTANT]
