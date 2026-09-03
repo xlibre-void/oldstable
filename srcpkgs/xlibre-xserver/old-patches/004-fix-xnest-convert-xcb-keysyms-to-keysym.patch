@@ -1,0 +1,45 @@
+--- a/hw/xnest/Keyboard.c
++++ b/hw/xnest/Keyboard.c
+@@ -119,12 +119,21 @@
+         const int num_keycode = max_keycode - min_keycode + 1;
+
+         xcb_get_keyboard_mapping_reply_t *keymap_reply = xnest_get_keyboard_mapping(
+-            xnestUpstreamInfo.conn, min_keycode, num_keycode);
++            xnestUpstreamInfo.conn, min_keycode, num_keycode);
+
+         if (!keymap_reply) {
+             ErrorF("Couldn't get keyboard mappings: no reply\n");
+             goto XkbError;
+         }
+
++        int nkeys = keymap_reply->keysyms_len * keymap_reply->keysyms_per_keycode;
++        KeySym *map = calloc(nkeys, sizeof(KeySym));
++        if (!map) {
++            free(keymap_reply);
++            ErrorF("Failed to allocate memory for keymap\n");
++            goto XkbError;
++        }
++
++        const xcb_keysym_t *src = xcb_get_keyboard_mapping_keysyms(keymap_reply);
++        for (int i = 0; i < nkeys; ++i) {
++            map[i] = (KeySym)src[i];
++        }
++
+         KeySymsRec keySyms = {
+             .minKeyCode = min_keycode,
+             .maxKeyCode = max_keycode,
+-            .mapWidth = keymap_reply->keysyms_per_keycode,
+-            .map = xcb_get_keyboard_mapping_keysyms(keymap_reply),
++            .mapWidth = keymap_reply->keysyms_per_keycode,
++            .map = map,
+         };
+
+         xcb_generic_error_t *mod_err = NULL;
+@@ -209,6 +218,7 @@
+     }
+
+     free(keymap_reply);
++    free(keySyms.map);
+
+     xnest_xkb_init(xnestUpstreamInfo.conn);
+
