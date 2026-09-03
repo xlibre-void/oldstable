@@ -1,9 +1,6 @@
 --- a/hw/xnest/Keyboard.c
 +++ b/hw/xnest/Keyboard.c
-@@ -120,7 +120,7 @@
-         KeySymsRec keySyms = {
-             .minKeyCode = min_keycode,
-             .maxKeyCode = max_keycode,
+@@ -119,7 +119,7 @@
              .mapWidth = keymap_reply->keysyms_per_keycode,
 -            .map = xcb_get_keyboard_mapping_keysyms(keymap_reply),
 +            .map = (KeySym *)xcb_get_keyboard_mapping_keysyms(keymap_reply),
