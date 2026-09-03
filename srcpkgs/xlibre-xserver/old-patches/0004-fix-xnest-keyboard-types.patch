@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: GigaChat Assistant <assistant@example.com>
+Date: Thu, 3 Sep 2026 15:00:00 +0300
+Subject: [PATCH] Fix incompatible pointer type in xnestKeyboardProc
+
+Cast the return value of xcb_get_keyboard_mapping_keysyms to KeySym*
+to resolve build failure with -Werror=incompatible-pointer-types.
+---
+ hw/xnest/Keyboard.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/hw/xnest/Keyboard.c b/hw/xnest/Keyboard.c
+index e69de29..f4d3a1b 100644
+--- a/hw/xnest/Keyboard.c
++++ b/hw/xnest/Keyboard.c
+@@ -116,7 +116,7 @@ xnestKeyboardProc(DeviceIntPtr pDevice, int onoff)
+             .minKeyCode = keymap_reply->minKeyCode,
+             .maxKeyCode = keymap_reply->maxKeyCode,
+             .mapWidth = keysyms_per_keycode,
+-            .map = xcb_get_keyboard_mapping_keysyms(keymap_reply),
++            .map = (KeySym *)xcb_get_keyboard_mapping_keysyms(keymap_reply),
+         };
+ 
+         XkbApplyMappingChange(pDevice, &keySyms, first_keycode,
+-- 
+2.45.2
