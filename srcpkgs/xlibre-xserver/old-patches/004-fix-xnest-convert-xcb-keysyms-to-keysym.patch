@@ -1,6 +1,6 @@
 --- a/hw/xnest/Keyboard.c
 +++ b/hw/xnest/Keyboard.c
-@@ -116,7 +116,7 @@ xnestKeyboardProc(DeviceIntPtr pDevice, int onoff)
+@@ -116,7 +116,7 @@ xnestKeyboardProc(DeviceIntPtr pDev, int onoff)
              .minKeyCode = min_keycode,
              .maxKeyCode = max_keycode,
              .mapWidth = keymap_reply->keysyms_per_keycode,
