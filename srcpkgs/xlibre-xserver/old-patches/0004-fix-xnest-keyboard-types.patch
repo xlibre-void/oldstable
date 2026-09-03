@@ -1,0 +1,11 @@
+--- a/hw/xnest/Keyboard.c
++++ b/hw/xnest/Keyboard.c
+@@ -116,7 +116,7 @@ xnestKeyboardProc(DeviceIntPtr pDevice, int onoff)
+             .minKeyCode = min_keycode,
+             .maxKeyCode = max_keycode,
+             .mapWidth = keymap_reply->keysyms_per_keycode,
+-			.map = xcb_get_keyboard_mapping_keysyms(keymap_reply),
++			.map = (KeySym *)xcb_get_keyboard_mapping_keysyms(keymap_reply),
+         };
+ 
+         xcb_generic_error_t *mod_err = NULL;
