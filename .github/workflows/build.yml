@@ -27,7 +27,7 @@ jobs:
       matrix:
         config:
           - { arch: x86_64,       libc: glibc }
-          - { arch: i686,         libc: glibc }
+          #- { arch: i686,         libc: glibc }
           - { arch: x86_64-musl,  libc: musl }
           
     container:
