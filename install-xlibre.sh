@@ -3,7 +3,7 @@
 # Maintainer : Sofiya for XLibre (sofiya@xlibre-void)
 # Script     : install-xlibre.sh
 # Version    : 0.1.1
-# Repository : https://github.com/xlibre-void/xlibre/releases
+# Repository : https://github.com/xlibre-void/oldstable/releases
 #
 
 # Note: this script requires 'sudo' to perform the installation
@@ -20,11 +20,11 @@
 # Сreate a catalog
 mkdir -p /etc/xbps.d
 # add Xlibe github mirror repository-x86_64-glibc
-cat <<'SETMIRROR' > /etc/xbps.d/99-repository-xlibre.conf
-repository=https://github.com/xlibre-void/xlibre/releases/latest/download/
+cat <<'SETMIRROR' > /etc/xbps.d/99-repository-xlibre-oldstable.conf
+repository=https://github.com/xlibre-void/oldstable/releases/latest/download/
 SETMIRROR
 # Add a public key to sign the repository
-# sudo wget -O /var/db/xbps/keys/00:ca:42:57:c9:c0:9a:ec:94:b4:7d:97:e5:a9:aa:1e.plist https://github.com/xlibre-void/xlibre/raw/refs/heads/main/repo-keys/x86_64/00:ca:42:57:c9:c0:9a:ec:94:b4:7d:97:e5:a9:aa:1e.plist
+# sudo wget -O /var/db/xbps/keys/00:ca:42:57:c9:c0:9a:ec:94:b4:7d:97:e5:a9:aa:1e.plist https://github.com/xlibre-void/oldstable/raw/refs/heads/main/repo-keys/x86_64/00:ca:42:57:c9:c0:9a:ec:94:b4:7d:97:e5:a9:aa:1e.plist
 cat <<'EOF' >> /var/db/xbps/keys/00:ca:42:57:c9:c0:9a:ec:94:b4:7d:97:e5:a9:aa:1e.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
