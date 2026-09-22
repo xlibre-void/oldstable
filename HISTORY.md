@@ -52,7 +52,7 @@ Most packages require:
 
 ### Autotools-based Packages
 
-Packages built from GitHub sources use `./autogen.sh` , `autoreconf -fiv` in the prepare step to generate configure scripts.
+Packages built from GitHub sources use `./autogen.sh` , `autoreconf -fiv` `NOCONFIGURE=1 ./autogen.sh` in the prepare step to generate configure scripts.
 
 ### Meson-based Packages
 
@@ -114,4 +114,4 @@ Some modern packages (xlibre-xf86-input-libinput, xlibre-xf86-input-wacom, xlibr
 | xf86-video-vmware:        | https://github.com/X11Libre/xf86-video-vmware         |
 | xf86-video-voodoo:        | https://github.com/X11Libre/xf86-video-voodoo         |
 | xf86-video-wsfb:          | https://github.com/X11Libre/xf86-video-wsfb           |
-| xf86-video-xgi:           | https://github.com/X11Libre/xf86-video-xgi           
+| xf86-video-xgi:           | https://github.com/X11Libre/xf86-video-xgi            |
