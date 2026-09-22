@@ -114,4 +114,4 @@ Some modern packages (xlibre-xf86-input-libinput, xlibre-xf86-input-wacom, xlibr
 | xf86-video-vmware:        | https://github.com/X11Libre/xf86-video-vmware         |
 | xf86-video-voodoo:        | https://github.com/X11Libre/xf86-video-voodoo         |
 | xf86-video-wsfb:          | https://github.com/X11Libre/xf86-video-wsfb           |
-| xf86-video-xgi:           | https://github.com/X11Libre/xf86-video-xgi            |
+| xf86-video-xgi:           | https://github.com/X11Libre/xf86-video-xgi           
