@@ -1,7 +1,7 @@
 # Template file for 'xlibre-xserver'
 
 pkgname=xlibre-xserver
-version=25.0.0.25
+version=25.0.0.26
 revision=1
 build_style=meson
 configure_args="
@@ -85,7 +85,7 @@ maintainer="Sofiya <sofiya@v.com>"
 license="MIT, BSD-3-Clause"
 homepage="https://x11libre.net/"
 distfiles="https://github.com/X11Libre/xserver/archive/refs/tags/xlibre-xserver-${version}.tar.gz"
-checksum=fa55ae214d1075bec155146cb10d46866e4a5f0ba7432fadcdf9ed16a4518d2c
+checksum=50aaaa9a0c25927d18e895d802bd6563ed04049b722c7da7cf02796d30b71633
 provides="
 	xorg-server-${version}_${revision}
 	xserver-abi-extension-10_1
